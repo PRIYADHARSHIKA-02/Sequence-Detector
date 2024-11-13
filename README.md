@@ -1,4 +1,5 @@
 # Sequence-Detector
+
 AIM:
 
 To design and simulate a sequence detector using both Moore and Mealy state machine models in Verilog HDL, and verify their functionality through a testbench using the Vivado 2023.1 simulation environment. The objective is to detect a specific sequence of bits (e.g., 1011) and compare the Moore and Mealy designs.
@@ -6,40 +7,39 @@ To design and simulate a sequence detector using both Moore and Mealy state mach
 APPARATUS REQUIRED:
 
 
-      Vivado 2023.1 or equivalent Verilog simulation tool.
-      Computer system with a suitable operating system.
+   Vivado 2023.1 or equivalent Verilog simulation tool.
+   Computer system with a suitable operating system.
 
 PROCEDURE:
 
 
 Launch Vivado 2023.1:
 
-Open Vivado and create a new project.
+   Open Vivado and create a new project.
 
-Write the Verilog Code for Sequence Detector (Moore and Mealy FSM):
+   Write the Verilog Code for Sequence Detector (Moore and Mealy FSM):
 
-Design two Verilog modules: one for a Moore FSM and another for a Mealy FSM to detect a sequence such as 1011.
+   Design two Verilog modules: one for a Moore FSM and another for a Mealy FSM to detect a sequence such as 1011.
 
-Create the Testbench:
+   Create the Testbench:
 
-Write a testbench to apply input sequences and verify the output of both FSM designs.
+   Write a testbench to apply input sequences and verify the output of both FSM designs.
 
-Add the Verilog Files:
+   Add the Verilog Files:
 
+   Add the Verilog code for both FSMs and the testbench to the Vivado project.
 
-Add the Verilog code for both FSMs and the testbench to the Vivado project.
+  Run Simulation:
 
-Run Simulation:
+  Run the simulation and observe the output to check if the sequence is detected correctly.
 
-Run the simulation and observe the output to check if the sequence is detected correctly.
+  Observe the Waveforms:
 
-Observe the Waveforms:
+  Analyze the waveform to ensure both the Moore and Mealy machines detect the sequence as expected.
 
-Analyze the waveform to ensure both the Moore and Mealy machines detect the sequence as expected.
+  Save and Document Results:
 
-Save and Document Results:
-
-Capture the waveforms and include the results in the final report.
+  Capture the waveforms and include the results in the final report.
 
 
 
@@ -53,8 +53,7 @@ module mealy_sequence_detector (
     input wire seq_in,
     output reg detected
 );
-    typedef enum reg [2:0]
-        {
+    typedef enum reg [2:0] {
     
         S0, S1, S2, S3  // States for detecting 1011
         
