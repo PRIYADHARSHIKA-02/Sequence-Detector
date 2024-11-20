@@ -52,26 +52,16 @@ module mealy_sequence_detector (
 );
     typedef enum reg [2:0] {
     
-        S0, S1, S2, S3  // States for detecting 1011
-        
+          S0, S1, S2, S3  // States for detecting 1011
          }
-    state_t;
-
-    state_t current_state, next_state;
-
-    // State transition logic
-    
-    always @(posedge clk or posedge reset) begin
-    
-        if (reset)
-        
+         state_t;
+         state_t current_state, next_state;
+         always @(posedge clk or posedge reset) begin
+         if (reset)
             current_state <= S0;
-            
         else
-            current_state <= next_state;
-            
-    end
-    // Next state and output logic
+            current_state <= next_state; 
+        end
     always @(*) begin
         detected = 0;
         case (current_state)
@@ -116,18 +106,13 @@ module moore_sequence_detector (
     typedef enum reg [2:0] {
         S0, S1, S2, S3, S4  // States for detecting 1011
     } state_t;
-
     state_t current_state, next_state;
-
-    // State transition logic
     always @(posedge clk or posedge reset) begin
         if (reset)
             current_state <= S0;
         else
             current_state <= next_state;
     end
-
-    // Next state and output logic
     always @(*) begin
         case (current_state)
             S0: begin
